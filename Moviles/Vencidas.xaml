@@ -1,0 +1,85 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moviles.Vencidas"
+             Title="Pagos Vencidos">
+
+	<ContentPage.Resources>
+		<Style TargetType="Label" x:Key="HeaderStyle">
+			<Setter Property="FontSize" Value="24" />
+			<Setter Property="FontAttributes" Value="Bold" />
+			<Setter Property="HorizontalOptions" Value="Center" />
+			<Setter Property="VerticalOptions" Value="Center" />
+			<Setter Property="TextColor" Value="White" />
+		</Style>
+		<Style TargetType="Label" x:Key="BadgeStyle">
+			<Setter Property="BackgroundColor" Value="#dc3545" />
+			<Setter Property="TextColor" Value="White" />
+			<Setter Property="Padding" Value="4,2" />
+			<Setter Property="HorizontalOptions" Value="Center" />
+			<Setter Property="VerticalOptions" Value="Center" />
+		</Style>
+	</ContentPage.Resources>
+
+	<Grid BackgroundColor="#6f42c1" Padding="10">
+		<VerticalStackLayout Spacing="20">
+			<!-- Header -->
+			<HorizontalStackLayout HorizontalOptions="Center">
+				<Image Source="warning_icon.png" WidthRequest="32" HeightRequest="32" />
+				<Label Text="Pagos Vencidos" Style="{StaticResource HeaderStyle}" />
+			</HorizontalStackLayout>
+
+			<!-- Tabla de Pagos -->
+			<Frame BackgroundColor="White" CornerRadius="8" Padding="10">
+				<VerticalStackLayout Spacing="10">
+					<!-- Fila de Pago -->
+					<Grid x:Name="JuanPerezRow" Padding="10" ColumnSpacing="10" RowSpacing="5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="2*" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+
+						<Label Text="Juan Pérez" Grid.Column="0" VerticalOptions="Center" />
+						<Label Text="$500.00" Grid.Column="1" VerticalOptions="Center" />
+						<Label Text="Vencido" Style="{StaticResource BadgeStyle}" Grid.Column="2" VerticalOptions="Center" />
+
+						<Button Text="Pagar"
+                                Grid.Column="3"
+                                BackgroundColor="#007bff"
+                                TextColor="White"
+                                Clicked="OnPayClicked" />
+					</Grid>
+
+					<!-- Repite esta estructura para más filas -->
+					<Grid x:Name="MariaLopezRow" Padding="10" ColumnSpacing="10" RowSpacing="5">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="2*" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+						</Grid.ColumnDefinitions>
+
+						<Label Text="María López" Grid.Column="0" VerticalOptions="Center" />
+						<Label Text="$750.00" Grid.Column="1" VerticalOptions="Center" />
+						<Label Text="Vencido" Style="{StaticResource BadgeStyle}" Grid.Column="2" VerticalOptions="Center" />
+
+						<Button Text="Pagar"
+                                Grid.Column="3"
+                                BackgroundColor="#007bff"
+                                TextColor="White"
+                                Clicked="OnPayClicked" />
+					</Grid>
+				</VerticalStackLayout>
+			</Frame>
+
+			<!-- Mensaje de Éxito -->
+			<Label x:Name="SuccessMessage"
+                   Text="Pago realizado exitosamente."
+                   IsVisible="False"
+                   BackgroundColor="LightGreen"
+                   Padding="10"
+                   HorizontalTextAlignment="Center" />
+		</VerticalStackLayout>
+	</Grid>
+</ContentPage>

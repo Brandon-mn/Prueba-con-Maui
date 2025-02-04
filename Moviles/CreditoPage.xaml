@@ -1,0 +1,60 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Moviles.CreditoPage"
+             BackgroundColor="#F5F2FF"
+             Title="Crédito">
+
+	<ScrollView>
+		<VerticalStackLayout Spacing="20" Padding="20">
+
+			<Button Text="Ver Créditos"
+                    BackgroundColor="#6A0DAD"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="8"
+                    Clicked="OnVerCreditosButtonClick"/>
+
+			<Frame BackgroundColor="#DCC6F4" CornerRadius="12" Padding="20" HasShadow="True" HorizontalOptions="Fill" IsVisible="False" x:Name="CreditoFrame">
+				<VerticalStackLayout>
+					<Label Text="Estado de Crédito" FontSize="24" TextColor="#4A0D77" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+					<Label Text="Detalles de tu crédito disponible y compras pendientes" FontSize="18" TextColor="#5E2E91" HorizontalTextAlignment="Center" Margin="0,5,0,10"/>
+
+					<StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+						<Label Text="Total Compras: $2500.00" FontSize="18" TextColor="#4A0D77"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+						<Label Text="Crédito Disponible: $1500.00" FontSize="18" TextColor="#2E7D32"/>
+					</StackLayout>
+
+					<StackLayout Orientation="Horizontal" Spacing="10" Padding="10">
+						<Label Text="Créditos Pendientes: $500.00" FontSize="18" TextColor="#FF7043"/>
+					</StackLayout>
+				</VerticalStackLayout>
+			</Frame>
+
+			<Label Text="Historial de Compras" FontSize="22" TextColor="#4A0D77" FontAttributes="Bold"/>
+			<Label Text="Revisa tus compras realizadas." FontSize="16" TextColor="#6A0DAD"/>
+
+			<Grid Padding="10">
+				<Grid ColumnDefinitions="Auto,*">
+					<BoxView Color="#6A0DAD" VerticalOptions="FillAndExpand" WidthRequest="5" />
+
+					<Frame BackgroundColor="White" CornerRadius="8" Padding="10" HasShadow="True" Grid.Column="1">
+						<TableView Intent="Form">
+							<TableRoot>
+								<TableSection Title="Compras Realizadas" TextColor="#4A0D77">
+									<TextCell Text="Compra de Artículo A" Detail="$500.00"/>
+									<TextCell Text="Compra de Artículo B" Detail="$750.00"/>
+									<TextCell Text="Compra de Artículo C" Detail="$350.00"/>
+									<TextCell Text="Compra de Artículo D" Detail="$900.00"/>
+								</TableSection>
+							</TableRoot>
+						</TableView>
+					</Frame>
+				</Grid>
+			</Grid>
+
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

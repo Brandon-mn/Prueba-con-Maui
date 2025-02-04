@@ -1,0 +1,55 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moviles.FechaCorte"
+             Title="Fecha de Corte">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="20" BackgroundColor="#F4ECF7" Spacing="20"> 
+
+        <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+            <Label Text="Fecha de Corte" FontSize="26" FontAttributes="Bold" TextColor="#4A235A" /> 
+        </HorizontalStackLayout>
+
+        <Frame Padding="20" BackgroundColor="White" BorderColor="#D2B4DE" CornerRadius="15" HasShadow="True">
+            <VerticalStackLayout Spacing="20">
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Fecha de Corte:" TextColor="#6C3483" />
+                    <Label Text="20/12/2024" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10">
+                    <Label Text="Días Restantes:" TextColor="#6C3483" />
+                    <Label Text="8" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                    
+                    <Frame BackgroundColor="#FADBD8" BorderColor="#E74C3C" Padding="5" CornerRadius="10" HorizontalOptions="Start" VerticalOptions="Center">
+                        <Label Text="¡Poco tiempo!" TextColor="#E74C3C" HorizontalOptions="Center" />
+                    </Frame>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="15" BackgroundColor="#E8DAEF" CornerRadius="12" BorderColor="#D2B4DE" HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Tu fecha de corte está cerca. Es importante que revises todas tus compras y pagos pendientes para evitar cargos adicionales."
+                       FontSize="16"
+                       TextColor="#4A235A"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand" />
+                <Label Text="Consejo: Realiza tus pagos antes de la fecha de corte para mantener tu cuenta al día."
+                       FontSize="16"
+                       TextColor="#4A235A"
+                       FontAttributes="Bold"
+                       HorizontalOptions="CenterAndExpand" />
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

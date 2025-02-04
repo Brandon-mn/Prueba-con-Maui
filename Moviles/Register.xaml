@@ -1,0 +1,126 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moviles.Register"
+             BackgroundColor="#210066"
+             Title="Registro de Usuario">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <Frame BackgroundColor="White" CornerRadius="15" Padding="20" HasShadow="True">
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Registro de Usuario"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#6A0DAD"
+                           HorizontalOptions="Center" />
+
+                    <!-- Nombre -->
+                    <VerticalStackLayout>
+                        <Label Text="Nombre" TextColor="#555" />
+                        <HorizontalStackLayout VerticalOptions="Center">
+                            <Image Source="person.svg" WidthRequest="25" HeightRequest="25" />
+                            <Entry Placeholder="Nombre"
+                                   WidthRequest="220"
+                                   Margin="10,0,0,0"
+                                   HorizontalOptions="StartAndExpand"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Apellido" TextColor="#555" />
+                        <HorizontalStackLayout VerticalOptions="Center">
+                            <Image Source="person.svg" WidthRequest="25" HeightRequest="25" />
+                            <Entry Placeholder="Apellido"
+                                   WidthRequest="220"
+                                   Margin="10,0,0,0"
+                                   HorizontalOptions="StartAndExpand"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Correo Electrónico" TextColor="#555" />
+                        <HorizontalStackLayout VerticalOptions="Center">
+                            <Image Source="mail.svg" WidthRequest="25" HeightRequest="25" />
+                            <Entry x:Name="EmailEntry"
+								    Placeholder="ejemplo@gmail.com"
+                                   WidthRequest="220"
+                                   Margin="10,0,0,0"
+                                   Keyboard="Email"
+                                   HorizontalOptions="StartAndExpand"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Contraseña" TextColor="#555" />
+                        <HorizontalStackLayout VerticalOptions="Center">
+                            <Image Source="key.svg" WidthRequest="25" HeightRequest="25" />
+                            <Entry x:Name="PasswordEntry"
+                                   Placeholder="Contraseña"
+                                   WidthRequest="220"
+                                   Margin="10,0,0,0"
+                                   IsPassword="True"
+                                   HorizontalOptions="StartAndExpand"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent"
+                                   TextChanged="OnPasswordTextChanged" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                            <Image Source="calamtion.svg" WidthRequest="20" HeightRequest="20" />
+                            <Label x:Name="MinLengthLabel" Text="Debe tener al menos 8 caracteres"
+                               FontSize="12"
+                               TextColor="Red" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                            <Image Source="calamtion.svg" WidthRequest="20" HeightRequest="20" />
+                            <Label x:Name="UpperCaseLabel" Text="Debe contener al menos una letra mayúscula"
+                               FontSize="12"
+                               TextColor="Red" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                            <Image Source="calamtion.svg" WidthRequest="20" HeightRequest="20" />
+                            <Label x:Name="SpecialCharLabel" Text="Debe contener al menos un carácter especial"
+                               FontSize="12"
+                               TextColor="Red" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout>
+                        <Label Text="Confirmar Contraseña" TextColor="#555" />
+                        <HorizontalStackLayout VerticalOptions="Center">
+                            <Image Source="key.svg" WidthRequest="25" HeightRequest="25" />
+                            <Entry  x:Name="PasswordEntry2"
+                                     Placeholder="Confirmar Contraseña"
+                                   WidthRequest="220"
+                                   Margin="10,0,0,0"
+                                   IsPassword="True"
+                                   HorizontalOptions="StartAndExpand"
+                                   TextColor="Black"
+                                   BackgroundColor="Transparent" />
+                        </HorizontalStackLayout>
+                        
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Button Text="Registrar"
+                                BackgroundColor="#4CAF50"
+                                TextColor="White"
+                                CornerRadius="20"
+                                WidthRequest="100"
+                                Clicked="OnRegisterClicked" />
+                        <Button Text="Cancelar"
+                                BackgroundColor="#F44336"
+                                TextColor="White"
+                                CornerRadius="20"
+                                WidthRequest="100"
+                                Clicked="OnCancelClicked" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

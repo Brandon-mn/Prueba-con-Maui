@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Moviles.LoginPage"
+             BackgroundColor="#210066">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#210066" Offset="0.0" />
+            <GradientStop Color="#4400CC" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <Grid>
+        <Frame BackgroundColor="White"
+           CornerRadius="15"
+           Padding="20"
+           Margin="20,100,20,40"
+           VerticalOptions="Center"
+           HeightRequest="500">
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Inicio de Sesión"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="#6A0DAD" />
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Correo Electrónico"
+                           FontSize="14"
+                           TextColor="#555" />
+                    <Frame BackgroundColor="#EFEFEF" 
+                           CornerRadius="10" 
+                           Padding="10"
+                           HasShadow="False">
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="person.svg"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   VerticalOptions="Center" />
+                            <Entry Placeholder="ejemplo@gmail.com"
+                                   Keyboard="Email"
+                                   TextColor="Black"
+                                   x:Name="EmailEntry"
+                                   HorizontalOptions="FillAndExpand" />
+                        </HorizontalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="Contraseña"
+                           FontSize="14"
+                           TextColor="#555" />
+                    <Frame BackgroundColor="#EFEFEF" 
+                           CornerRadius="10" 
+                           Padding="10"
+                           HasShadow="False">
+                        <HorizontalStackLayout Spacing="10">
+                            <Image Source="key.svg"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   VerticalOptions="Center" />
+                            <Entry Placeholder="Contraseña"
+                                   IsPassword="True"
+                                   TextColor="Black"
+                                   x:Name="PasswordEntry"
+                                   HorizontalOptions="FillAndExpand" 
+                                   />
+                        </HorizontalStackLayout>
+                    </Frame>
+                </VerticalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Button Text="Entrar"
+                            BackgroundColor="#6A0DAD"
+                            TextColor="White"
+                            CornerRadius="20"
+                            WidthRequest="120"
+                            Clicked="OnLoginClicked" />
+                    <Button Text="Cerrar"
+                            BackgroundColor="#6A0DAD"
+                            TextColor="White"
+                            CornerRadius="20"
+                            WidthRequest="120"
+                            Clicked="OnCloseClicked" />
+                </HorizontalStackLayout>
+
+                <Label x:Name="PopupMessage"
+                       Text="Cargando, espere por favor..."
+                       TextColor="Green"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       IsVisible="False" />
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label Text="¿Aún no tienes una cuenta? Regístrate aquí..."
+       TextColor="White"
+       FontSize="12"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"
+       VerticalOptions="End"
+       Margin="0,0,0,20">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnRegisterLabelTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="UX_DesignMaui.SolicitarAumentoCreditoPage"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center" VerticalOptions="Start">
+                <Label Text="Solicitar Aumento de Crédito" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+
+            <Label Text="Comprobante de domicilio (PDF)" FontSize="14" TextColor="Black" />
+            <Button Text="Subir archivo PDF" BackgroundColor="#8A2BE2" TextColor="White" FontAttributes="Bold" Clicked="UploadPDF_Click" />
+
+            <HorizontalStackLayout Spacing="5" IsVisible="False" x:Name="PDFFileDisplay">
+                <Label Text="📄" WidthRequest="20" HeightRequest="20" TextColor="Gray" />
+                <Label x:Name="PDFFileName" FontSize="12" TextColor="Gray" VerticalOptions="Center" />
+                <Button Text="X" WidthRequest="20" HeightRequest="20" TextColor="Red" BackgroundColor="Transparent" Clicked="RemovePDF_Click" />
+            </HorizontalStackLayout>
+
+            <Label Text="INE/Fotografía del solicitante (Imagen)" FontSize="14" TextColor="Black" />
+            <Button Text="Subir Imagen" BackgroundColor="#8A2BE2" TextColor="White" FontAttributes="Bold" Clicked="UploadImage_Click" />
+
+            <!-- Display de la imagen -->
+            <HorizontalStackLayout Spacing="5" IsVisible="False" x:Name="ImageFileDisplay">
+                <Label Text="🖼️" WidthRequest="20" HeightRequest="20" TextColor="Gray" />
+                <Label x:Name="ImageFileName" FontSize="12" TextColor="Gray" VerticalOptions="Center" />
+                <Button Text="X" WidthRequest="20" HeightRequest="20" TextColor="Red" BackgroundColor="Transparent" Clicked="RemoveImage_Click" />
+            </HorizontalStackLayout>
+
+            <Button Text="Solicitar Aumento" BackgroundColor="#6A0DAD" TextColor="White" FontAttributes="Bold" Clicked="SolicitarAumento_Click" HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

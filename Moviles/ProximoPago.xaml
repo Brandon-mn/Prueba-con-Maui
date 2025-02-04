@@ -1,0 +1,43 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moviles.ProximoPago"
+             Title="Próximo Pago"
+             BackgroundColor="#F5F5F5">
+
+	<VerticalStackLayout Padding="20" Spacing="20">
+
+		<HorizontalStackLayout HorizontalOptions="CenterAndExpand" Spacing="10">
+			<Label Text="Próximo Pago" FontSize="24" FontAttributes="Bold" TextColor="#6A0DAD" />
+		</HorizontalStackLayout>
+
+		<Frame Padding="20" BackgroundColor="White" BorderColor="#6f42c1">
+			<VerticalStackLayout Spacing="15">
+
+				<HorizontalStackLayout>
+					<Label Text="Monto a Pagar:" />
+					<Label Text="$500.00" FontSize="20" FontAttributes="Bold" TextColor="#333333" />
+				</HorizontalStackLayout>
+
+				<HorizontalStackLayout>
+					<Label Text="Fecha de Vencimiento:" />
+					<Label Text="20/12/2024" FontSize="20" FontAttributes="Bold" TextColor="#333333" />
+				</HorizontalStackLayout>
+
+				<HorizontalStackLayout>
+					<Label Text="Estado:" />
+					<Label Text="Pendiente" FontSize="20" FontAttributes="Bold" TextColor="#FF0000" />
+				</HorizontalStackLayout>
+
+			</VerticalStackLayout>
+		</Frame>
+
+		<Frame Padding="10" BackgroundColor="#FFBBDEFB">
+			<Label Text="Consejo: Realiza tu pago a tiempo para evitar recargos."
+                   FontSize="14"
+                   FontAttributes="Bold"
+                   TextColor="#1976D2" />
+		</Frame>
+
+	</VerticalStackLayout>
+
+</ContentPage>

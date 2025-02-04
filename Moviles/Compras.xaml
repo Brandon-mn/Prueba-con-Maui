@@ -1,0 +1,77 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Moviles.Compras"
+             Title="Productos Disponibles">
+    <ContentPage.Resources>
+        <Style TargetType="Frame">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="15" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="BackgroundColor" Value="#E8DAEF" />
+            <Setter Property="HasShadow" Value="True" />
+            <Setter Property="BorderColor" Value="#D2B4DE" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6C3483" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="5,10" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="TextColor" Value="#4A235A" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25" BackgroundColor="#F4ECF7">
+            
+            <Label 
+                FontSize="26"
+                HorizontalOptions="Center"
+                TextColor="#4A235A"
+                FontAttributes="Bold"
+                Text="Bienvenido a nuestra Tienda Departamental" />
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Producto A" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                    <Label Text="Una excelente opción para tu hogar, con un descuento especial." />
+                    <Label Text="$500.00" FontSize="18" FontAttributes="Bold" TextColor="#8E44AD" />
+                    <Button Text="Comprar Ahora" Clicked="OnComprarProducto" CommandParameter="Producto A" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Producto B" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                    <Label Text="Tecnología avanzada y calidad garantizada, ¡no te lo puedes perder!" />
+                    <Label Text="$750.00" FontSize="18" FontAttributes="Bold" TextColor="#8E44AD" />
+                    <Button Text="Comprar Ahora" Clicked="OnComprarProducto" CommandParameter="Producto B" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Producto C" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                    <Label Text="Producto ideal para tu oficina, con funcionalidad premium." />
+                    <Label Text="$350.00" FontSize="18" FontAttributes="Bold" TextColor="#8E44AD" />
+                    <Button Text="Comprar Ahora" Clicked="OnComprarProducto" CommandParameter="Producto C" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame>
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Producto D" FontSize="20" FontAttributes="Bold" TextColor="#4A235A" />
+                    <Label Text="Producto ideal para regalo, ¡haz a alguien feliz hoy mismo!" />
+                    <Label Text="$900.00" FontSize="18" FontAttributes="Bold" TextColor="#8E44AD" />
+                    <Button Text="Comprar Ahora" Clicked="OnComprarProducto" CommandParameter="Producto D" />
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+
+    
